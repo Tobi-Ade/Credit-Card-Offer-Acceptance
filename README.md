@@ -15,44 +15,44 @@ This project is carried out to explore customer acceptance trends of credit card
 More information on the problem and the data used for this project can be found [here](https://www.kaggle.com/datasets/thedevastator/unlocking-credit-card-offer-acceptance-trends-in)
 
 ## Project Outline 
-- [Jupyter Notebook]()<br>
+- [Jupyter Notebook](https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance/blob/main/credit_card_acceptance.ipynb)<br>
   Here we clean the data, carry out exploratory data analysis, train and tune different machine learning models and see how well they perform on the data
  
-- [Training the Model](https://github.com/Tobi-Ade/Mobile-Price-Classification/blob/main/train.py)<br>
+- [Training the Model](https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance/blob/main/train.py)<br>
 Here the final training occurs. We select the best model, and save it to a file so that it can be used on new data 
 
-- [Creating a Flask App](https://github.com/Tobi-Ade/Mobile-Price-Classification/blob/main/predict.py)<br>
-This is where we write a script for serving the model. We use the saved model to classify any new device when its features are sent to this flask app. 
+- [Creating a Flask App](https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance/blob/main/predict.py)<br>
+This is where we write a script for serving the model. We use the saved model to predict a customer's decision when the data is sent to the flask app.
 
-- [Testing the service ](https://github.com/Tobi-Ade/Mobile-Price-Classification/blob/main/request.py)<br>
-Here we write a script for testing our classification service. We send a request to the flask app and it returns the price range of the device.
+- [Testing the service ](https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance/blob/main/request.py)<br>
+Here we write a script for testing our predcition service. We send a request to the flask app and it returns the estimated answer based on customer data.
 
-- [Creating a Dockerfile](https://github.com/Tobi-Ade/Mobile-Price-Classification/blob/main/Dockerfile)<br>
-- We create a virtual environment using docker and run our classificatiion service here.
+- [Creating a Dockerfile](https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance/blob/main/Dockerfile)<br>
+- We create a virtual environment using docker and run our service here.
 
 ## How to Run The Project
 Please note that these steps are to be carried out in a terminal window like command prompt or git bash<br>
   - Clone the repository to your computer using:  <br>
   ```bash
-  git clone https://github.com/Tobi-Ade/Mobile-Price-Classification.git
+  git clone https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance.git
   ```
   <br>
   
   - Navigate to the directory where you cloned the repo and cd into the cloned repo by running: <br>
   ```bash
-  cd Mobile-Price-Classification
+  cd Credit-Card-Offer-Acceptance
   ```
   <br>
   You should now be in the project folder
   
-  - The libraries used in this project can be found in the **requirements.txt** file. It is advisable to run this project in a virtual environment to avoid issues with your system configuration. To create a virtual environment with venv <br>
+  - The libraries used in this project can be found in the [requirements.txt](https://github.com/Tobi-Ade/Credit-Card-Offer-Acceptance/blob/main/requirements.txt) file. It is advisable to run this project in a virtual environment to avoid issues with your system configuration. To create a virtual environment with venv <br>
   ```bash
-  python -m venv mobile-env
+  python -m venv credit-env
   ```
   
-   Activate mobile-env with: <br>
+   Activate credit-env with: <br>
    ```bash
-   mobile-env\Scripts\activate.bat
+   credit-env\Scripts\activate.bat
    ```
    <br>
    
@@ -76,16 +76,16 @@ Please note that these steps are to be carried out in a terminal window like com
   with waitress: <br>
  
   ```bash
-  waitress-serve --listen=0.0.0.0:9696 predict:app
+  waitress-serve --listen=0.0.0.0:9090 predict:app
   ```
   
    with gunicorn: <br>
  
   ```bash
-  gunicorn --bind 0.0.0.0:9696 predict:app
+  gunicorn --bind 0.0.0.0:9090 predict:app
   ```
   
-  Now the classification service should be running locally on "http://0.0.0.0:9696"
+  Now the prediction service should be running locally on "http://0.0.0.0:9090"
   
   Finally, you send a POST request to the service. You can do this by running the request.py file or use the file to understand the format in which the request will be sent, and then create your own request. This is how you run it:<br>
   ```bash
@@ -94,11 +94,11 @@ Please note that these steps are to be carried out in a terminal window like com
   
   You can also decide to build and run the Dockerfile for the project. To build this locally:
   ```bash
-  docker build -t mobile_price_class .
+  docker build -t credit_card_project .
   ```
   
   Then to run it:<br>
   ```bash
-  docker run -it --rm -p 9696:9696 mobile_price_class:latest
+  docker run -it --rm -p 9090:9090 credit_card_project:latest
   ```
   
