@@ -102,3 +102,14 @@ Please note that these steps are to be carried out in a terminal window like com
   docker run -it --rm -p 9090:9090 credit_card_project:latest
   ```
   
+
+  ## References 
+  - [ML Zoomcamp project criteria](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/projects)
+  - [Data Source and Problem information](https://www.kaggle.com/datasets/thedevastator/unlocking-credit-card-offer-acceptance-trends-in)
+  - [Image source](https://www.forbes.com/advisor/wp-content/uploads/2022/07/credit_cards.jpeg-1.jpg)
+  
+
+ ## Contact Me 
+ [<img src="https://img.shields.io/badge/tobi-ade-000000?style=flat-square&logo=github&logoColor=white" />](https://github.com/Tobi-Ade) [<img src="https://img.shields.io/badge/gabriel-adeleke-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/gabriel-adeleke/) [<img src="https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=Gmail&logoColor=white" />](mailto:themarveloustobi@gmail.com)
+
+  
